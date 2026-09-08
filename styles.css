@@ -1,0 +1,33 @@
+*{box-sizing:border-box}
+:root{
+ --navy:#0B1F3A;
+ --navy2:#12315A;
+ --orange:#F28C28;
+ --orange2:#FF9F43;
+ --bg:#F5F7FB;
+ --panel:#FFFFFF;
+ --line:#E4E8EF;
+ --text:#142033;
+ --muted:#667085;
+}
+body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.topbar{height:72px;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;color:#fff;box-shadow:0 3px 14px rgba(11,31,58,.18)}
+.brand{display:flex;gap:12px;align-items:center}.brand span{display:block;font-size:12px;color:#cdd8e6}
+.logo{width:42px;height:42px;border-radius:12px;background:var(--orange);color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:22px}
+.topbar button,.panel button{border:0;border-radius:10px;padding:10px 15px;background:var(--orange);color:var(--navy);font-weight:800;cursor:pointer}
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 72px)}
+.sidebar{background:var(--navy);padding:16px}
+.nav{width:100%;border:0;background:transparent;color:#dbe5f0;text-align:left;padding:12px;border-radius:10px;margin-bottom:6px;font-weight:600;cursor:pointer}
+.nav.active,.nav:hover{background:var(--orange);color:var(--navy)}
+main{min-width:0}.page{display:none;padding:28px}.page.active{display:block}
+h1,h2{color:var(--navy)}.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:20px 0}
+.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 4px 18px rgba(11,31,58,.06)}
+.card{border-top:4px solid var(--orange)}
+.card span,.card small{display:block;color:var(--muted)}.card strong{display:block;font-size:30px;color:var(--navy);margin:8px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.alert{padding:12px;border-radius:10px;margin:8px 0;background:#f8fafc}.critical{border-left:4px solid #d64545}.warn{border-left:4px solid var(--orange)}
+.badge{padding:4px 8px;border-radius:999px;background:#eaf0f7;color:var(--navy)}.good{font-weight:800}
+.dropzone{border:2px dashed var(--orange);background:#fff8ef;text-align:center}.dropzone span{display:block;color:var(--muted);margin-top:6px}
+.msg{padding:12px 14px;border-radius:12px}.bot{background:#eef3f8;border-left:4px solid var(--orange);color:var(--navy)}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{display:flex;overflow:auto}.nav{min-width:max-content}.cards,.grid2{grid-template-columns:1fr}.page{padding:18px}}

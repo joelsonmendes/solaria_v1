@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarIA V1</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">S</div>
+    <div><strong>SolarIA</strong><span>Inteligência para sistemas fotovoltaicos</span></div>
+  </div>
+  <button onclick="window.print()">Gerar relatório</button>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <button class="nav active" data-target="dashboard">Dashboard</button>
+    <button class="nav" data-target="clientes">Clientes</button>
+    <button class="nav" data-target="faturas">Faturas</button>
+    <button class="nav" data-target="diagnostico">Diagnóstico</button>
+    <button class="nav" data-target="expansao">Expansão</button>
+    <button class="nav" data-target="ana">Ana SolarIA</button>
+  </aside>
+
+  <main>
+    <section class="page active" id="dashboard">
+      <h1>Dashboard Expert</h1>
+      <p class="muted">Visão consolidada da carteira fotovoltaica.</p>
+      <div class="cards">
+        <article class="card"><span>Usinas</span><strong>128</strong><small>117 normais · 7 atenção · 4 críticas</small></article>
+        <article class="card"><span>Geração hoje</span><strong>2,84 MWh</strong><small>+4,8% vs média recente</small></article>
+        <article class="card"><span>SolarIA Score médio</span><strong>87</strong><small>Bom</small></article>
+        <article class="card"><span>Oportunidades de expansão</span><strong>11</strong><small>Déficit persistente</small></article>
+      </div>
+      <div class="grid2">
+        <article class="panel">
+          <h2>Alertas prioritários</h2>
+          <div class="alert critical">Cliente 042 — sem geração há 19 h</div>
+          <div class="alert critical">Cliente 173 — falha reportada pelo inversor</div>
+          <div class="alert warn">Cliente 081 — geração 18% abaixo da referência</div>
+          <div class="alert warn">Cliente 219 — consumo aumentou 31%</div>
+        </article>
+        <article class="panel">
+          <h2>Usina selecionada</h2>
+          <p><strong>Potência:</strong> 8,80 kWp</p>
+          <p><strong>Inversor:</strong> 8 kW</p>
+          <p><strong>Status:</strong> Operando</p>
+          <p><strong>Score:</strong> <span class="badge good">91/100</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="clientes"><h1>Clientes</h1><div class="panel"><p>Cadastro e carteira de clientes do SolarIA Expert.</p></div></section>
+    <section class="page" id="faturas"><h1>Faturas</h1><div class="panel dropzone"><strong>Enviar faturas em PDF</strong><span>Leitura e análise inteligente.</span></div></section>
+    <section class="page" id="diagnostico"><h1>Diagnóstico</h1><div class="panel"><p>Motor de diagnóstico de desempenho da usina.</p></div></section>
+    <section class="page" id="expansao"><h1>Expansão</h1><div class="panel"><p>Simulador de expansão fotovoltaica.</p></div></section>
+    <section class="page" id="ana"><h1>Ana SolarIA</h1><div class="panel"><div class="msg bot">Posso explicar geração, faturas, créditos, desempenho e expansão.</div></div></section>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
