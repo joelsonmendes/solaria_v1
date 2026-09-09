@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:16
+    container_name: solaria-postgres
+    environment:
+      POSTGRES_USER: solaria
+      POSTGRES_PASSWORD: solaria
+      POSTGRES_DB: solaria
+    ports:
+      - "5432:5432"
+    volumes:
+      - solaria_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U solaria -d solaria"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    container_name: solaria-api
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  solaria_pgdata:
